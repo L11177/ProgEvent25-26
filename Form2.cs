@@ -16,5 +16,20 @@ namespace ProgEvent25_26
         {
             InitializeComponent();
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultat = MessageBox.Show(
+            "Voulez-vous vraiment quitter ?","Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultat == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.Exit(); // ferme complètement l’application
+            }
+        }
     }
 }
